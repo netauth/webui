@@ -1,0 +1,7 @@
+{% extends "base.p2" %}
+
+{% block title %}Entity Info{% endblock %}
+
+{% block content %}
+{% include "partials/entity.p2" %}
+{% endblock %}

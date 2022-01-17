@@ -1,0 +1,29 @@
+<div>
+  <div>{{entity.ID}}</div>
+  <div>{{entity.Number}}</div>
+  <div>{{entity.Meta.PrimaryGroup}}</div>
+  <div>{{entity.Meta.GECOS}}</div>
+  <div>{{entity.Meta.DisplayName}}</div>
+  <div>{{entity.Meta.LegalName}}</div>
+  <div>{{entity.Meta.Home}}</div>
+  <div>{{entity.Meta.Shell}}</div>
+  <div>{{entity.Meta.GraphicalShell}}</div>
+  <div>{{entity.Meta.Locked}}</div>
+  {% if entity.Meta.Capabilities|length %}
+  <div>
+    <div>Capabilities:</div>
+    {% for cap in entity.Meta.Capabilities %}
+    <div>{{cap}}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if entity.Meta.Groups|length %}
+  <div>
+    <div>Direct Memberships:</div>
+    {% for group in entity.Meta.Groups %}
+    <div><a href="/info/group/{{group}}">{{group}}</a></div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>

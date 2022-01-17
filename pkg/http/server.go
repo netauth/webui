@@ -40,6 +40,7 @@ func New(l hclog.Logger) (*Server, error) {
 	s.fileServer(s.r, "/static", http.Dir("theme/static"))
 	s.r.Get("/", s.rootIndex)
 	s.r.Get("/info/group/{name}", s.viewGroupInfo)
+	s.r.Get("/info/entity/{id}", s.viewEntityInfo)
 
 	return &s, nil
 }
