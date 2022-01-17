@@ -6,6 +6,7 @@ import (
 	"github.com/flosch/pongo2/v4"
 	"github.com/go-chi/chi/v5"
 	"github.com/hashicorp/go-hclog"
+	"github.com/netauth/netauth/pkg/netauth"
 )
 
 // Server wraps up all the request routers and associated components
@@ -14,7 +15,7 @@ type Server struct {
 	l hclog.Logger
 	r chi.Router
 
-	n *http.Server
-
+	n     *http.Server
+	c     *netauth.Client
 	tmpls *pongo2.TemplateSet
 }

@@ -1,0 +1,7 @@
+{% extends "base.p2" %}
+
+{% block title %}Group Info{% endblock %}
+
+{% block content %}
+{% include "partials/group.p2" %}
+{% endblock %}

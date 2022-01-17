@@ -1,0 +1,30 @@
+<div>
+  {{group}}
+  <div>{{group.Name}}</div>
+  <div>{{group.DisplayName}}</div>
+  <div>{{group.Number}}</div>
+  {% if group.ManagedBy == group.Name %}
+  <div>This group is self-managed.</div>
+  {% elif group.ManagedBy %}
+  <div>This group is managed by <a href="/info/group/{{group.ManagedBy}}">{{group.ManagedBy}}</a>.</div>
+  {% endif %}
+  {% if group.Capabilities|length %}
+  <div>
+    <div>Capabilities:</div>
+    {% for cap in group.Capabilities %}
+    <div>{{cap}}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if managed|length %}
+  <div>
+    <div>{{group.Name}} Manages:</div>
+    {% for group in managed %}
+    {{group.Name}}
+    {{group.DisplayName}}
+    {{group.Number}}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
