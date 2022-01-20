@@ -1,0 +1,14 @@
+{% extends "base.p2" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<form method="POST">
+  <input name="ID" type="text" />
+  <input name="Secret" type="password" />
+  {% if bad_auth %}
+  <div>Authentication Failed</div>
+  {% endif %}
+  <input type="submit" value="Authenticate" />
+</form>
+{% endblock %}

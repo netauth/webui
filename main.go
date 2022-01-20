@@ -1,14 +1,24 @@
 package main
 
 import (
-	"os"
 	"fmt"
+	"os"
+	"time"
 
 	"github.com/hashicorp/go-hclog"
 	"github.com/spf13/viper"
 
 	"github.com/netauth/webui/pkg/http"
+
+	_ "github.com/netauth/netauth/pkg/token/jwt"
+	_ "github.com/netauth/netauth/pkg/token/keyprovider/fs"
 )
+
+func init() {
+	viper.SetDefault("token.duration", time.Minute*5)
+	viper.SetDefault("token.keyprovider", "fs")
+	viper.SetDefault("token.backend", "jwt-rsa")
+}
 
 func main() {
 	viper.SetConfigName("config")

@@ -1,7 +1,6 @@
 package http
 
 import (
-	"context"
 	"net/http"
 
 	"github.com/flosch/pongo2/v4"
@@ -9,7 +8,7 @@ import (
 )
 
 func (s *Server) viewGroupInfo(w http.ResponseWriter, r *http.Request) {
-	grp, mgd, err := s.c.GroupInfo(context.Background(), chi.URLParam(r, "name"))
+	grp, mgd, err := s.c.GroupInfo(r.Context(), chi.URLParam(r, "name"))
 	if err != nil {
 		s.doTemplate(w, r, "errors/netauth.p2", pongo2.Context{"error": err.Error()})
 		return

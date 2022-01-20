@@ -16,7 +16,7 @@ func (s *Server) viewEntityInfo(w http.ResponseWriter, r *http.Request) {
 	}
 
 	ctx := pongo2.Context{
-		"entity":   entity,
+		"entity": entity,
 	}
 	s.doTemplate(w, r, "view/entity_info.p2", ctx)
 }

@@ -4,4 +4,9 @@
 
 {% block content %}
 Hello
+
+{% if token %}
+There is a token <pre>{{token.EntityID}}</pre>
+{% endif %}
+
 {% endblock %}
