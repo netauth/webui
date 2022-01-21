@@ -1,0 +1,11 @@
+{% extends "base.p2" %}
+
+{% block title %}Entity Search{% endblock %}
+
+{% block content %}
+<form>
+  <input type="search" name="q" />
+  <input type="submit" value="Search" />
+</form>
+{% include "partials/entity_list.p2" %}
+{% endblock %}

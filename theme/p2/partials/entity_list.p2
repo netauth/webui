@@ -1,0 +1,16 @@
+{% if entities %}
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Number</th>
+    <th>Actions</th>
+  </tr>
+  {% for entity in entities %}
+  <tr>
+    <td>{{entity.ID}}</td>
+    <td>{{entity.Number}}</td>
+    <td>Actions</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
