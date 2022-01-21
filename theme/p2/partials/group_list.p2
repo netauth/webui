@@ -1,0 +1,18 @@
+{% if groups %}
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Display Name</th>
+    <th>Number</th>
+    <th>Actions</th>
+  </tr>
+  {% for group in groups %}
+  <tr>
+    <td>{{group.Name}}</td>
+    <td>{{group.DisplayName}}</td>
+    <td>{{group.Number}}</td>
+    <td>Action</td>
+  </tr>
+{% endfor %}
+</table>
+{% endif %}

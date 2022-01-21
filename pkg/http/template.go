@@ -38,7 +38,6 @@ func (s *Server) doTemplate(w http.ResponseWriter, r *http.Request, tmpl string,
 	}
 	tkn := r.Context().Value(ctxToken{})
 	ctx.Update(pongo2.Context{"token": tkn})
-	s.l.Debug("context", "context", ctx)
 
 	t, err := s.tmpls.FromCache(tmpl)
 	if err != nil {
