@@ -17,6 +17,11 @@
     {% endfor %}
   </div>
   {% endif %}
+  {% if entity.Meta.Keys %}
+  {% for key in entity.Meta.Keys %}
+  <pre>{{key}}</pre>
+  {% endfor %}
+  {% endif %}
 
   {% if entity.Meta.Groups|length %}
   <div>
