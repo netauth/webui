@@ -1,0 +1,29 @@
+<div>
+  {% if cap == 0 %}
+  GLOBAL_ROOT
+  {% elif cap == 10 %}
+  CREATE_ENTITY
+  {% elif cap == 11 %}
+  DESTROY_ENTITY
+  {% elif cap == 12 %}
+  MOTIFY_ENTITY_META
+  {% elif cap == 13 %}
+  MODIFY_ENTITY_KEYS
+  {% elif cap == 14 %}
+  CHANGE_ENTITY_SECRET
+  {% elif cap == 15 %}
+  LOCK_ENTITY
+  {% elif cap == 16 %}
+  UNLOCK_ENTITY
+  {% elif cap == 20 %}
+  CREATE_GROUP
+  {% elif cap == 21 %}
+  DESTROY_GROUP
+  {% elif cap == 22 %}
+  MODIFY_GROUP_META
+  {% elif cap == 23 %}
+  MODIFY_GROUP_MEMBERS
+  {% else %}
+  UNKNOWN_CAPABILITY
+  {% endif %}
+</div>

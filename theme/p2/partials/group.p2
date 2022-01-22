@@ -12,7 +12,7 @@
   <div>
     <div>Capabilities:</div>
     {% for cap in group.Capabilities %}
-    <div>{{cap}}</div>
+    {% include "partials/capability.p2" %}
     {% endfor %}
   </div>
   {% endif %}
