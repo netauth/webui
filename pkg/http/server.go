@@ -66,6 +66,8 @@ func New(l hclog.Logger) (*Server, error) {
 	s.r.Get("/info/entity/{id}", s.viewEntityInfo)
 	s.r.Get("/search/group", s.viewGroupSearch)
 	s.r.Get("/search/entity", s.viewEntitySearch)
+	s.r.Get("/entity/new", s.viewEntityCreate)
+	s.r.Post("/entity/new", s.viewEntityCreate)
 
 	return &s, nil
 }

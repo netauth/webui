@@ -1,0 +1,12 @@
+{% extends "base.p2" %}
+
+{% block title %}Create Entity{% endblock %}
+
+{% block content %}
+<form method="POST">
+  <input type="text" name="ID" placeholder="ID" />
+  <input type="number" name="Number" value="-1" placeholder="AUTO" />
+  <input type="password" name="Secret" placeholder="Initial Secret" />
+  <input type="submit" value="Create Entity" />
+</form>
+{% endblock %}

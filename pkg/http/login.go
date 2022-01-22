@@ -70,3 +70,11 @@ func (s *Server) authMiddleware(next http.Handler) http.Handler {
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }
+
+func (s *Server) getToken(r *http.Request) string {
+	c, err := r.Cookie("netauth_tkn")
+	if err != nil {
+		return ""
+	}
+	return c.Value
+}
