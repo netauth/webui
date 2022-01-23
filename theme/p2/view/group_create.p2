@@ -1,0 +1,13 @@
+{% extends "base.p2" %}
+
+{% block title %}Create Group{% endblock %}
+
+{% block content %}
+<form method="POST">
+  <input type="text" name="Name" placeholder="Name" />
+  <input type="text" name="DisplayName" placeholder="DisplayName" />
+  <input type="text" name="ManagedBy" placeholder="Delegate Management To" />
+  <input type="number" name="Number" value="-1" placeholder="AUTO" />
+  <input type="submit" value="Create Group" />
+</form>
+{% endblock %}
