@@ -1,0 +1,11 @@
+{% extends "base.p2" %}
+
+{% block title %}Editing Group {{group.Name}}{% endblock %}
+
+{% block content %}
+<form method="POST">
+  <input type="text" name="DisplayName" value="{{group.DisplayName}}" />
+  <input type="text" name="ManagedBy" value="{{group.ManagedBy}}" />
+  <input type="submit" value="Update" />
+</form>
+{% endblock %}

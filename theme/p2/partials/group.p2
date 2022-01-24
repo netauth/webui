@@ -1,5 +1,4 @@
 <div>
-  {{group}}
   <div>{{group.Name}}</div>
   <div>{{group.DisplayName}}</div>
   <div>{{group.Number}}</div>
