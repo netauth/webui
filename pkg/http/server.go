@@ -59,17 +59,21 @@ func New(l hclog.Logger) (*Server, error) {
 
 	s.fileServer(s.r, "/static", http.Dir("theme/static"))
 	s.r.Get("/", s.rootIndex)
+
 	s.r.Get("/login", s.viewLoginPage)
 	s.r.Post("/login", s.viewLoginSubmit)
 	s.r.Get("/logout", s.viewLogout)
-	s.r.Get("/info/group/{name}", s.viewGroupInfo)
-	s.r.Get("/info/entity/{id}", s.viewEntityInfo)
-	s.r.Get("/search/group", s.viewGroupSearch)
-	s.r.Get("/search/entity", s.viewEntitySearch)
+
 	s.r.Get("/entity/new", s.viewEntityCreate)
 	s.r.Post("/entity/new", s.viewEntityCreate)
+	s.r.Get("/entity/search", s.viewEntitySearch)
+	s.r.Get("/entity/info/{id}", s.viewEntityInfo)
+
+
 	s.r.Get("/group/new", s.viewGroupCreate)
 	s.r.Post("/group/new", s.viewGroupCreate)
+	s.r.Get("/group/search", s.viewGroupSearch)
+	s.r.Get("/group/info/{name}", s.viewGroupInfo)
 
 	return &s, nil
 }

@@ -35,5 +35,5 @@ func (s *Server) viewGroupCreate(w http.ResponseWriter, r *http.Request) {
 		s.doTemplate(w, r, "errors/netauth.p2", pongo2.Context{"error": err.Error()})
 		return
 	}
-	http.Redirect(w, r, "/info/group/"+fdata.Name, http.StatusSeeOther)
+	http.Redirect(w, r, "/group/info/"+fdata.Name, http.StatusSeeOther)
 }

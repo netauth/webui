@@ -34,5 +34,5 @@ func (s *Server) viewEntityCreate(w http.ResponseWriter, r *http.Request) {
 		s.doTemplate(w, r, "errors/netauth.p2", pongo2.Context{"error": err.Error()})
 		return
 	}
-	http.Redirect(w, r, "/info/entity/"+fdata.ID, http.StatusSeeOther)
+	http.Redirect(w, r, "/entity/info/"+fdata.ID, http.StatusSeeOther)
 }
